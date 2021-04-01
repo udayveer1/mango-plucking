@@ -8,7 +8,7 @@ const Constraint=Matter.Constraint;
 
 var treeObj, stoneObj,groundObject;
 var mango1,mango2,mango3,mango4,mango5,mango6,mango7,mango8,mango9,mango10,mango11,mango12;
-var world,boy;
+var world,boy,slingshot
 
 //Declare launcherObject and launchForce variable here
 
@@ -22,7 +22,7 @@ function setup() {
 	engine = Engine.create();
 	world = engine.world;
 
-	stoneObj=new Stone(235,420); 
+	stoneObj=new Stone(235,420);
 
 	mango1=new mango(1100,100,30);
   mango2=new mango(1170,130,30);
@@ -40,7 +40,7 @@ function setup() {
 	treeObj=new tree(1050,580);
 	groundObject=new ground(width/2,600,width,20);
   //create launcherObject here
-
+slingshot=new Slingshot(stone.body,{x:200,y:100})
 
 	Engine.run(engine);
 }
@@ -70,7 +70,7 @@ function draw() {
   
   groundObject.display();
   // display launcher object here
-    
+    slingshot.display();
 
 
   detectollision(stoneObj,mango1);
